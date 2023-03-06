@@ -30,7 +30,6 @@ public class StudentService{
         return savedStudentDTO;
     }
 
-
     public List<StudentDTO> getAllStudents() {
         List<Student> entities = repository.findAll();
         return entities.stream().map( StudentMapper::maptoStudentDTO)

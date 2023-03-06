@@ -1,7 +1,6 @@
 package com.fiap.spring.students.entities;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
