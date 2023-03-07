@@ -16,10 +16,16 @@ public class Student implements Serializable{
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String enrollment;
 
     public Student(Long id, String name, String enrollment) {
+        this.id = id;
+        this.name = name;
+        this.enrollment = enrollment;
+    }
+
+    public Student(String name, String enrollment) {
         this.id = id;
         this.name = name;
         this.enrollment = enrollment;
