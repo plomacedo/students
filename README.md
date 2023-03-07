@@ -12,11 +12,9 @@ Para rodar o projeto siga os passos abaixo:
 - Preencha os campos abaixo:
 
 `spring.datasource.url=jdbc:postgresql://localhost:5432/[database]` 
-#
 `spring.datasource.username=[username]`
-#
 `spring.datasource.password= [password]`
-#
+
 Windows
 `./mvnw.cmd spring-boot:run`
 
