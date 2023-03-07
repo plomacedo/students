@@ -11,8 +11,10 @@ Para rodar o projeto siga os passos abaixo:
 - Abra o arquivo application.properties
 - Preencha os campos abaixo:
 
-`spring.datasource.url=jdbc:postgresql://localhost:5432/[database]` 
+`spring.datasource.url=jdbc:postgresql://localhost:5432/[database]`
+
 `spring.datasource.username=[username]`
+
 `spring.datasource.password= [password]`
 
 Windows
