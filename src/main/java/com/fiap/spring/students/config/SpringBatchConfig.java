@@ -40,7 +40,7 @@ public class SpringBatchConfig {
 
         DefaultLineMapper<Student> defaultLineMapper = new DefaultLineMapper<>();
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
-        lineTokenizer.setDelimiter( "  " );
+        lineTokenizer.setDelimiter(DelimitedLineTokenizer.DELIMITER_TAB);
         lineTokenizer.setStrict( false );
         lineTokenizer.setNames( "name", "enrollment" );
         BeanWrapperFieldSetMapper<Student> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
