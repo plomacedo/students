@@ -3,6 +3,7 @@ package com.fiap.spring.students.controller;
 import com.fiap.spring.students.dto.TransactionDTO;
 import com.fiap.spring.students.entities.Transaction;
 import com.fiap.spring.students.services.TransactionService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transactions")
+@Api(value="API REST Transactions")
+@CrossOrigin(origins = "*")
 public class TransactionController {
 
     @Autowired
