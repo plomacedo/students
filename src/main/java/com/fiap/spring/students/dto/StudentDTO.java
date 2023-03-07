@@ -2,15 +2,13 @@ package com.fiap.spring.students.dto;
 
 import com.fiap.spring.students.entities.Student;
 
-import java.util.UUID;
-
 public class StudentDTO {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String enrollment;
 
-    public StudentDTO(UUID id, String name, String enrollment) {
+    public StudentDTO(Long id, String name, String enrollment) {
         this.id = id;
         this.name = name;
         this.enrollment = enrollment;
@@ -22,8 +20,16 @@ public class StudentDTO {
         enrollment = student.getEnrollment();
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEnrollment() {
@@ -34,11 +40,4 @@ public class StudentDTO {
         this.enrollment = enrollment;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

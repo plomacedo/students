@@ -17,7 +17,7 @@ public class StudentService{
     @Autowired
     private StudentRepository repository;
 
-    public StudentDTO findStudentById(UUID id){
+    public StudentDTO findStudentById(Long id){
         Student entity = repository.findById(id).get();
         StudentDTO dto = new StudentDTO(entity);
         return dto;
