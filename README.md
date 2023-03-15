@@ -16,7 +16,7 @@ Para rodar o projeto siga os passos abaixo:
 `spring.datasource.username=[username]` \
 `spring.datasource.password= [password]`
 
-Inicialize o PostgreSQL e verifique a cricação da tabela Students
+Inicialize o PostgreSQL e verifique a cricação do datavase students
 
 Windows
 `./mvnw.cmd spring-boot:run`
