@@ -2,9 +2,7 @@ package com.fiap.spring.students.dto;
 
 import com.fiap.spring.students.entities.Student;
 
-import javax.persistence.*;
 import java.util.Date;
-import java.util.UUID;
 
 public class TransactionDTO {
 

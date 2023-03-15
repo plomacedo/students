@@ -1,8 +1,6 @@
 package com.fiap.spring.students.mappers;
 
-import com.fiap.spring.students.dto.StudentDTO;
 import com.fiap.spring.students.dto.TransactionDTO;
-import com.fiap.spring.students.entities.Student;
 import com.fiap.spring.students.entities.Transaction;
 
 

@@ -1,12 +1,12 @@
 package com.fiap.spring.students.entities;
 
+
 import javax.persistence.*;
 import java.util.Date;
-import java.util.UUID;
 
 @Entity
 @Table(name="tb_transaction")
-public class Transaction {
+public class Transaction{
 
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class Transaction {
 
     @Column(nullable = false)
     private double amount;
-    
+
     @ManyToOne
     @JoinColumn(name="student_id", nullable=false)
     private Student student;

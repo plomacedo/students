@@ -13,6 +13,6 @@ public class ItemProcessor implements org.springframework.batch.item.ItemProcess
     @Override
     public StudentDTO process(Student student) throws Exception {
         student.setName(student.getName().split("  ")[0]);
-        return maptoStudentDTO( student );
+        return maptoStudentDTO(student);
     }
 }

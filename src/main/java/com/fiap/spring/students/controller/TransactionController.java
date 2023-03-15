@@ -1,10 +1,7 @@
 package com.fiap.spring.students.controller;
 
 import com.fiap.spring.students.dto.TransactionDTO;
-import com.fiap.spring.students.entities.Student;
 import com.fiap.spring.students.entities.Transaction;
-import com.fiap.spring.students.mappers.StudentMapper;
-import com.fiap.spring.students.repositories.StudentRepository;
 import com.fiap.spring.students.services.StudentService;
 import com.fiap.spring.students.services.TransactionService;
 import io.swagger.annotations.Api;
