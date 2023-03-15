@@ -1,9 +1,12 @@
 package com.fiap.spring.students.controller;
 
+import com.fiap.spring.students.dto.StudentDTO;
 import com.fiap.spring.students.dto.TransactionDTO;
 import com.fiap.spring.students.entities.Transaction;
+import com.fiap.spring.students.mappers.StudentMapper;
 import com.fiap.spring.students.services.StudentService;
 import com.fiap.spring.students.services.TransactionService;
+import com.github.javafaker.Faker;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +21,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/transactions")
@@ -75,5 +84,25 @@ public class TransactionController {
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
                 .body(outputStream.toByteArray());
 
+    }
+
+    @PostMapping("/random/{quantity}")
+    @ApiOperation(value="this method creates a set of random transactions")
+    public ResponseEntity<String> createRandomTransaction(@PathVariable Integer quantity) {
+
+        List<StudentDTO> studentsDto = studentService.getAllStudents();
+        Random rand = new Random();
+        Faker faker = new Faker();
+        for (int i = 0; i < quantity; i++) {
+            TransactionDTO transactionDTO = new TransactionDTO();
+            transactionDTO.setStudent(StudentMapper.mapToStudent(studentsDto.get(rand.nextInt(studentsDto.size()))));
+            transactionDTO.setDate(faker.date().past(365, TimeUnit.DAYS));
+            transactionDTO.setType(faker.business().creditCardType());
+            transactionDTO.setCardNumber(faker.business().creditCardNumber());
+            transactionDTO.setAmount(faker.random().nextDouble());
+            transactionService.createTransaction(transactionDTO);
+        }
+
+        return new ResponseEntity<>(String.format("created: %s", quantity), HttpStatus.CREATED);
     }
 }
