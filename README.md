@@ -39,4 +39,7 @@
 A lista completa de alunos estará disponível em http://localhost:8080/alunos.
 Também é possível adicionar alunos individualmente, assim como consulta-los por id, conforme documentação do endpoint.
 
+- Para gerar uma massa de transcações, foi gerado um faker dentro do TransactionController. Para carrega-la, basta entrar no navegador a quantidade de entradas desejadas na url. Por exemplo, para gerar 100 transações, digite http://localhost:8080/transactions/random/100 . Aguarde o aviso visual de criação dos dados. Também é possível a criação individual de transações, assim como a listagem por id e de todas as transações existendes, de acordo com a documentação do endpoint.
 
+- Para exportar o relatório de transações, em seu navegador insira o id do aluno desejado na url. http://localhost:8080/transactions/{studentId}/report 
+Por exemplo, http://localhost:8080/transactions/1297/report . O Download iniciará automaticamente. (OBS: O Faker cria transações para alunos randomicamente, portanto certifique-se de utilizasr um id de aluno que possui transações criadas. 
