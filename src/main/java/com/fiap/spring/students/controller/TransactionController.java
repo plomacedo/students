@@ -86,7 +86,7 @@ public class TransactionController {
 
     }
 
-    @PostMapping("/random/{quantity}")
+    @GetMapping("/random/{quantity}")
     @ApiOperation(value="this method creates a set of random transactions")
     public ResponseEntity<String> createRandomTransaction(@PathVariable Integer quantity) {
 
